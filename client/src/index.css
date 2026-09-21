@@ -1,0 +1,28 @@
+:root {
+  --bs-body-font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.auth-page {
+  min-height: 100vh;
+  background: #f1f4fb;
+}
+
+.auth-card {
+  max-width: 440px;
+}
+
+.auth-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  color: #0d6efd;
+  background: #e7f0ff;
+  font-size: 1.5rem;
+}
+
+.reset-link {
+  overflow-wrap: anywhere;
+}
