@@ -1,4 +1,4 @@
-const PRODUCTION_FRONTEND_URL = "https://password-reset0-app.netlify.app";
+const PRODUCTION_FRONTEND_URL = "https://passwordreset0.netlify.app";
 const DEVELOPMENT_FRONTEND_URL = "http://localhost:5173";
 
 const stripTrailingSlash = (url) => url.trim().replace(/\/+$/, "");

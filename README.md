@@ -4,8 +4,8 @@ A MERN application that implements **Register → Forgot Password → Reset Pass
 
 > **This project intentionally does not implement Login.** There is no login page, login route, login API, JWT, or protected dashboard. Registration goes straight to Forgot Password so the reset flow can be tested.
 
-- Frontend (Netlify): https://password-reset0-app.netlify.app
-- Backend (Render): https://password-reset-m997.onrender.com
+- Frontend (Netlify): https://passwordreset0.netlify.app
+- Backend (Render): https://password-reset-1-qfps.onrender.com
 - Repository: https://github.com/nandiniK7/password-reset
 
 ## Technologies
@@ -99,7 +99,7 @@ npm install
 npm run dev              # http://localhost:5173
 ```
 
-On `localhost` / `127.0.0.1` the frontend automatically calls `http://localhost:5000`. Anywhere else it calls `VITE_API_URL`, falling back to `https://password-reset-m997.onrender.com` if that variable is missing.
+On `localhost` / `127.0.0.1` the frontend automatically calls `http://localhost:5000`. Anywhere else it calls `VITE_API_URL`, falling back to `https://password-reset-1-qfps.onrender.com` if that variable is missing.
 
 ## Environment variables
 
@@ -109,7 +109,7 @@ On `localhost` / `127.0.0.1` the frontend automatically calls `http://localhost:
 | --- | --- |
 | `PORT` | Port to listen on (Render provides its own; `5000` locally) |
 | `MONGO_URI` | MongoDB connection string |
-| `FRONTEND_URL` | Frontend base URL, used in reset links and added to the CORS allow-list. Production: `https://password-reset0-app.netlify.app` |
+| `FRONTEND_URL` | Frontend base URL, used in reset links and added to the CORS allow-list. Production: `https://passwordreset0.netlify.app` |
 | `NODE_ENV` | `production` on Render, `development` locally |
 | `RETURN_RESET_LINK` | `true` returns the reset link in the forgot-password response (for testing without email). Any other value never exposes the link |
 | `EMAIL_USER` | Gmail address that sends the email |
@@ -119,7 +119,7 @@ On `localhost` / `127.0.0.1` the frontend automatically calls `http://localhost:
 ### `client/.env` (optional)
 
 ```env
-VITE_API_URL=https://password-reset-m997.onrender.com
+VITE_API_URL=https://password-reset-1-qfps.onrender.com
 ```
 
 ## MongoDB setup
@@ -145,20 +145,20 @@ Alternatively, use a local MongoDB: `MONGO_URI=mongodb://127.0.0.1:27017/passwor
 - Root directory: `server`
 - Build command: `npm install`
 - Start command: `npm start`
-- Environment variables: `PORT=5000`, `MONGO_URI`, `FRONTEND_URL=https://password-reset0-app.netlify.app`, `NODE_ENV=production`, `RETURN_RESET_LINK=true`, `EMAIL_USER`, `EMAIL_PASS`, `EMAIL_FROM`
-- Verify: open https://password-reset-m997.onrender.com/api/health, which should return `{"status":"ok"}`. (Render free instances sleep, so the first request can take ~30–60 seconds.)
+- Environment variables: `PORT=5000`, `MONGO_URI`, `FRONTEND_URL=https://passwordreset0.netlify.app`, `NODE_ENV=production`, `RETURN_RESET_LINK=true`, `EMAIL_USER`, `EMAIL_PASS`, `EMAIL_FROM`
+- Verify: open https://password-reset-1-qfps.onrender.com/api/health, which should return `{"status":"ok"}`. (Render free instances sleep, so the first request can take ~30–60 seconds.)
 
 ### Frontend on Netlify
 
 - Base directory: `client`
 - Build command: `npm run build`
 - Publish directory: `dist`
-- Environment variable: `VITE_API_URL=https://password-reset-m997.onrender.com`
+- Environment variable: `VITE_API_URL=https://password-reset-1-qfps.onrender.com`
 - `client/public/_redirects` contains `/* /index.html 200` so direct visits to `/forgot-password` and `/reset-password/<token>` work.
 
 ### CORS
 
-The backend allows these origins: `http://localhost:5173`, `http://127.0.0.1:5173`, `https://password-reset0-app.netlify.app`, and `FRONTEND_URL`. Requests from any other browser origin are rejected. Requests with no `Origin` header (curl, health checks) are allowed.
+The backend allows these origins: `http://localhost:5173`, `http://127.0.0.1:5173`, `https://passwordreset0.netlify.app`, and `FRONTEND_URL`. Requests from any other browser origin are rejected. Requests with no `Origin` header (curl, health checks) are allowed.
 
 ## Testing flow
 
